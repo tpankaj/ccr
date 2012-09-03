@@ -15,4 +15,5 @@
 
 ACLOCAL_AMFLAGS = -I m4
 SUBDIRS = src
+dist_pkgdata_DATA = data/*
 dist_noinst_SCRIPTS = autogen.sh

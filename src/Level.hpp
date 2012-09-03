@@ -15,17 +15,23 @@
  *    along with Command Command Revolution.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
-#include <cstdlib>
+#include <vector>
 #include <string>
-#include <iostream>
 
-#include "Level.hpp"
-
-int main(int argc, char* argv[])
+class Level
 {
-	Level level(std::string(DATADIR) + std::string("/shell_slave-the_servitude_easy.level"));
+public:
+	Level(std::string filePath);
+	std::string getName();
+	std::string getDifficulty();
+	int getTimeout();
+	std::vector<std::string> getCommandList();
 
-	return EXIT_SUCCESS;
-}
+private:
+	void parseLevel();
+	std::string filePath;
+	std::string name;
+	std::string difficulty;
+	int timeout;
+	std::vector<std::string> commandList;
+};

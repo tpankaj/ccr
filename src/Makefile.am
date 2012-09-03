@@ -14,8 +14,12 @@
 #    along with Command Command Revolution.  If not, see <http://www.gnu.org/licenses/>.
 
 bin_PROGRAMS = ccr
-ccr_SOURCES = main.cpp
+ccr_SOURCES = \
+Level.cpp \
+Level.hpp \
+main.cpp
 ccr_CXXFLAGS = $(AM_CXXFLAGS) -std=gnu++0x
-ccr_CPPFLAGS = $(AM_CPPFLAGS)
+ccr_CPPFLAGS = $(AM_CPPFLAGS) -DDATADIR=\"'../data'\"
+#ccr_CPPFLAGS = $(AM_CPPFLAGS) -DDATADIR=\"'$(pkgdatadir)'\"
 ccr_LDFLAGS = $(LDFLAGS)
 ccr_LDADD = $(LDADD)
