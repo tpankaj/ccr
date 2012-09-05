@@ -13,7 +13,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with Command Command Revolution.  If not, see <http://www.gnu.org/licenses/>.
 
-ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I build-aux
 SUBDIRS = src
 dist_pkgdata_DATA = data/*
 dist_noinst_SCRIPTS = autogen.sh

@@ -18,8 +18,9 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
-#include <fstream>
 #include <iostream>
+#include <fstream>
+#include <boost/lexical_cast.hpp>
 
 #include "Level.hpp"
 
@@ -61,7 +62,7 @@ void Level::parseLevel()
 	// Get Timeout
 	std::string timeoutStr;
 	getline(levelFile, timeoutStr);
-	timeout = std::stoi(timeoutStr);
+	timeout = boost::lexical_cast<int>(timeoutStr);
 
 	// Get Command List
 	std::string temp;
@@ -69,11 +70,4 @@ void Level::parseLevel()
 		commandList.push_back(temp);
 	if (commandList.back() == "")
 		commandList.pop_back();
-
-	std::cout << "Level: " << name << std::endl;
-	std::cout << "Difficulty: " << difficulty << std::endl;
-	std::cout << "Timeout: " << timeout << std::endl;
-	std::cout << "Command List: " << std::endl;
-	for (unsigned i = 0; i < commandList.size(); ++i)
-		std::cout << commandList.at(i) << std::endl;
 }

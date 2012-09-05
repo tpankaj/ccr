@@ -15,11 +15,15 @@
 
 bin_PROGRAMS = ccr
 ccr_SOURCES = \
+Game.cpp \
+Game.hpp \
 Level.cpp \
 Level.hpp \
+LevelManager.cpp \
+LevelManager.hpp \
 main.cpp
 ccr_CXXFLAGS = $(AM_CXXFLAGS) -std=gnu++0x
-ccr_CPPFLAGS = $(AM_CPPFLAGS) -DDATADIR=\"'../data'\"
-#ccr_CPPFLAGS = $(AM_CPPFLAGS) -DDATADIR=\"'$(pkgdatadir)'\"
-ccr_LDFLAGS = $(LDFLAGS)
-ccr_LDADD = $(LDADD)
+ccr_CPPFLAGS = $(AM_CPPFLAGS) $(BOOST_CPPFLAGS) -DDATADIR=\"'../data'\"
+#ccr_CPPFLAGS = $(AM_CPPFLAGS) $(BOOST_CPPFLAGS) -DDATADIR=\"'$(pkgdatadir)'\"
+ccr_LDFLAGS = $(LDFLAGS) $(BOOST_CHRONO_LDFLAGS) $(BOOST_FILESYSTEM_LDFLAGS) $(BOOST_THREAD_LDFLAGS)
+ccr_LDADD = $(LDADD) $(BOOST_CHRONO_LIBS) $(BOOST_FILESYSTEM_LIBS) $(BOOST_THREAD_LIBS)

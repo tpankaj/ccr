@@ -15,6 +15,9 @@
  *    along with Command Command Revolution.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef Level_hpp
+#define Level_hpp
+
 #include <vector>
 #include <string>
 
@@ -35,3 +38,5 @@ private:
 	int timeout;
 	std::vector<std::string> commandList;
 };
+
+#endif /* Level_hpp */

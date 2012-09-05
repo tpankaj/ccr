@@ -17,7 +17,6 @@ AC_PREREQ([2.65])
 AC_INIT([Command Command Revolution], [0.1], [tushar.s.pankaj@gmail.com], [ccr], [about:blank])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([src/config.h])
-AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([dist-xz])
 
 AC_LANG([C++])
@@ -25,6 +24,11 @@ AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_LIBTOOL
+
+BOOST_REQUIRE([1.34.1])
+BOOST_THREADS
+BOOST_CHRONO
+BOOST_FILESYSTEM
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT

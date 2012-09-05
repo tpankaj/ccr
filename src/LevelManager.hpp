@@ -15,18 +15,26 @@
  *    along with Command Command Revolution.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
+#ifndef LevelManager_hpp
+#define LevelManager_hpp
 
-#include <cstdlib>
+#include <vector>
 #include <string>
-#include <iostream>
 
-#include "Game.hpp"
+#include "Level.hpp"
 
-int main(int argc, char* argv[])
+class LevelManager
 {
-	Game game(DATADIR);
-	game.start();
+public:
+	LevelManager(std::string dataDir);
+	std::vector<std::vector<std::vector<std::string> > > getLevelList();
+	Level getLevel(int difficulty, int level);
 
-	return EXIT_SUCCESS;
-}
+private:
+	void populateLevelList();
+	void addLevel(std::string filePath);
+	std::string dataDir;
+	std::vector<std::vector<std::vector<std::string> > > levelList;
+};
+
+#endif /* LevelManager_hpp */
