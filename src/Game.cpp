@@ -138,16 +138,16 @@ void Game::runLevel(int difficulty, int levelNum)
 	std::cout << level.getName();
 	switch (difficulty) {
 	case 0:
-		std::cout << " Easy";
+		std::cout << " (Easy)";
 		break;
 	case 1:
-		std::cout << " Medium";
+		std::cout << " (Medium)";
 		break;
 	case 2:
-		std::cout << " Hard";
+		std::cout << " (Hard)";
 		break;
 	case 3:
-		std::cout << " Extreme";
+		std::cout << " (Extreme)";
 		break;
 	}
 	std::cout <<std::endl;
